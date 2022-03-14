@@ -17,12 +17,12 @@ const tourSchema = new mongoose.Schema({
         type:Number,
         required: [true,'A tour must have a group size']
     },
-    ratingsAverage: {
+    ratingsQuantity: {
         type: Number,
         default: 0
        
     },
-    ratingsQuantity:{
+    ratingsAverage:{
         type: Number,
         default: 4.5,
         min: [1,'Rating must be greater than 1.0'],
@@ -110,8 +110,7 @@ tourSchema.pre(/^find/, function(next){
 })
 
 tourSchema.post(/^find/, function(doc,next){
-    console.log(`Query took ${Date.now()- this.start} milliseconds`)
-    console.log(doc)
+    console.log(`Query took ${Date.now()- this.start} milliseconds`)  
     next()
 })
 
