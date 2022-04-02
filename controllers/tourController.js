@@ -5,6 +5,7 @@ const catchAsync = require('./../utilis/catchAsync')
 const AppError = require('./../utilis/appError')
 
 
+
 exports.aliasTopTours = (req,res,next) => {
     req.query.sort = '-ratingsAverage,price'
     req.query.limit = '5'
